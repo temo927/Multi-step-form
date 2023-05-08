@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Multi-step form</title>
+
+    <script defer src="script.js"></script>
+  </head>
+  <body>
+    <!-- Sidebar start -->
+    <section>
+      <div class="container">
+        <div class="form__sidebar">
+          <nav class="nav">
+            <img
+              src="images/bg-sidebar-desktop.svg"
+              alt="sidebar-image"
+              class="nav__image"
+              id="image"
+            />
+            <ul class="nav__steps">
+              <li class="nav__form">
+                <span>1</span>
+                <p>Step 1</p>
+                <h1>your info</h1>
+              </li>
+              <li class="nav__plan">
+                <span>2</span>
+                <p>Step 2</p>
+                <h1>select plan</h1>
+              </li>
+              <li class="nav__adds">
+                <span>3</span>
+                <p>Step 3</p>
+                <h1>adds-on</h1>
+              </li>
+              <li class="nav__summary">
+                <span>4</span>
+                <p>Step 4</p>
+                <h1>Summary</h1>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div class="slider">
+          <div class="forms__info slide slide--1">
+            <div class="your__info">
+              <h1>Personal info</h1>
+              <p>Please provide your name, email address, and phone number.</p>
+              <form class="input__form">
+                <label for="name">Name</label
+                ><span class="hidden">This field is required</span>
+                <input type="text" placeholder=" e.g. Stephen King" id="name" />
+                <label for="email">Email Adress</label
+                ><span class="hidden">This field is required</span>
+                <input
+                  type="email"
+                  placeholder=" e.g. stephenking@lorem.com"
+                  name="email"
+                  id="email"
+                />
+                <label for="number">Phone number</label
+                ><span class="hidden">This field is required</span>
+                <input
+                  type="tel"
+                  placeholder=" e.g. +1 234 567 890"
+                  id="number"
+                />
+              </form>
+            </div>
+          </div>
+          <div class="billing__info slide slide--2">
+            <div class="bill__form">
+              <h1>Select your plan</h1>
+              <p class="text">you have the option monthly or early billing</p>
+              <div class="bill__plans">
+                <div class="arcade plan active">
+                  <img src="/images/icon-arcade.svg" alt="arcade" />
+                  <h2>Arcade</h2>
+                  <p>$90/yr</p>
+                  <p class="offer">2 months free</p>
+                </div>
+                <div class="advance plan">
+                  <img src="/images/icon-advanced.svg" alt="arcade" />
+                  <h2>Advanced</h2>
+                  <p>$129/yr</p>
+                  <p class="offer">2 months free</p>
+                </div>
+                <div class="pro plan">
+                  <img src="/images/icon-pro.svg" alt="pro" />
+                  <h2>Pro</h2>
+                  <p>$150/yr</p>
+                  <p class="offer">2 months free</p>
+                </div>
+              </div>
+              <article class="pay__options">
+                <label for="rad1">Monthly</label>
+                <input type="radio" name="payment" id="rad1" value="monthly" />
+                <input
+                  type="radio"
+                  name="payment"
+                  id="rad2"
+                  value="yearly"
+                  checked
+                />
+                <label for="rad2">Yearly</label>
+              </article>
+            </div>
+          </div>
+          <div />
+          <button type="button" class="form__button--back hidden">
+            Go Back
+          </button>
+          <button type="button" class="form__button--next">Next Step</button>
+          <button type="button" class="form__button--confirm hidden">
+            Confirm
+          </button>
+          <div />
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
