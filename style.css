@@ -19,7 +19,8 @@ body {
   padding-top: 20px;
 }
 
-.form__sidebar span {
+.form__sidebar button {
+  background-color: rgba(200, 200, 200, 0);
   border-radius: 50px;
   border: 1px solid white;
   position: absolute;
@@ -27,6 +28,7 @@ body {
   font-size: 13px;
   color: white;
   padding: 8px 12px 8px 12px;
+  cursor: pointer;
 }
 
 .nav__image {
@@ -109,9 +111,7 @@ body {
   margin-top: -15px;
   color: red;
 }
-.hidden {
-  display: none;
-}
+
 .billing__info {
   margin-left: 70px;
   padding-top: 28px;
@@ -141,6 +141,10 @@ body {
   padding: 15px 10px 10px 10px;
   border-radius: 6px;
 }
+.plan:hover {
+  background-color: hsl(217, 100%, 97%);
+  border: 1px solid blue !important;
+}
 .plan h2 {
   font-size: 17px;
   margin-top: 25px;
@@ -158,9 +162,10 @@ body {
   width: 35px;
   margin-bottom: 15px;
 }
-.active {
-  background-color: hsl(217, 100%, 97%);
-  border: 1px solid blue !important;
+.warning {
+  position: absolute;
+  top: 310px;
+  color: red;
 }
 .pay__options {
   width: 400px;
@@ -192,6 +197,175 @@ input[type="radio"]:checked {
   height: 5px;
   z-index: 1;
 }
+
+.adds__info {
+  margin-left: 70px;
+  padding-top: 28px;
+  width: 500px;
+  height: 250px;
+}
+.adds__info h1 {
+  font-size: 28px;
+  color: hsl(213, 96%, 18%);
+}
+.adds__info .text-1 {
+  font-size: 15px;
+  margin-top: 7px;
+  color: hsl(231, 11%, 63%);
+  width: 550px;
+}
+.adds {
+  width: 500px;
+  height: 220px;
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.check__form {
+  display: flex;
+  align-items: center;
+  border: 1px solid grey;
+  border-radius: 10px;
+  width: 400px;
+  height: 160px;
+}
+.check__form:hover {
+  background-color: hsl(217, 100%, 97%);
+  border: 1px solid blue;
+}
+
+.check__form h2 {
+  font-size: 15px;
+}
+.check__form p {
+  font-size: 11px;
+  margin-top: 3px;
+  color: grey;
+}
+.check__form span {
+  margin-left: 150px;
+  font-size: 14px;
+  color: blue;
+}
+.check__form label {
+  margin-left: 20px;
+  width: 150px;
+}
+input[type="checkbox"] {
+  content: "";
+  display: block;
+  width: 16px;
+  height: 16px;
+  border: 2px solid #555555;
+  border-radius: 3px;
+  background-color: white;
+  margin-left: 10px;
+}
+.finish__box {
+  margin-left: 70px;
+  padding-top: 28px;
+  width: 500px;
+  height: 250px;
+}
+.finish__box h1 {
+  font-size: 28px;
+  color: hsl(213, 96%, 18%);
+}
+.finish__box .text--2 {
+  font-size: 15px;
+  margin-top: 7px;
+  color: hsl(231, 11%, 63%);
+  width: 550px;
+}
+.summary {
+  width: 500px;
+  height: 220px;
+  margin-top: 40px;
+  display: flex;
+  gap: 150px;
+  background-color: hsl(217, 100%, 97%);
+}
+.summary__box {
+  display: flex;
+}
+.summary__plan {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  height: 80px;
+  margin-top: 20px;
+  margin-left: 20px;
+}
+.box {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+.box p {
+  margin-left: 20px;
+  color: grey;
+}
+.summary__plan a {
+  text-decoration: underline;
+  color: grey;
+}
+.summary__price {
+  margin-left: -200px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+  gap: 16px;
+}
+.summary__price p:first-child {
+  margin-bottom: 60px;
+  margin-top: 15px;
+}
+.total {
+  display: flex;
+  justify-content: space-between;
+  /* position: absolute;
+  top: 360px;
+  left: 90px; */
+  margin-top: 250px;
+  margin-left: -540px;
+  width: 500px;
+  color: grey;
+}
+.total p:last-child {
+  margin-left: 235px;
+  font-size: 23px;
+  color: blue;
+}
+.slide--5 {
+  width: 500px;
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: -50px;
+}
+.slide--5 img {
+  width: 100px;
+  margin-bottom: 30px;
+  margin-left: 5px;
+}
+.slide--5 h1 {
+  font-size: 35px;
+  color: hsl(213, 96%, 18%);
+}
+.slide--5 p {
+  font-size: 14px;
+  width: 400px;
+  color: grey;
+  margin-top: 10px;
+  margin-left: 20px;
+}
+.slide--5 span {
+  color: grey;
+}
+
 .slider {
   position: relative;
   margin-left: 70px;
@@ -205,12 +379,13 @@ input[type="radio"]:checked {
 .form__button--next {
   width: 90px;
   height: 30px;
-  top: 410px;
-  left: 380px;
+  position: absolute;
+  top: 430px;
+  left: 630px;
   border-radius: 5px;
   background-color: hsl(213, 96%, 18%);
   color: white;
-  position: absolute;
+  cursor: pointer;
 }
 .form__button--back {
   color: grey;
@@ -218,18 +393,31 @@ input[type="radio"]:checked {
   width: 70px;
   border: none;
   position: absolute;
-  top: 430px;
-  left: 100px;
+  top: 440px;
+  left: 320px;
+  cursor: pointer;
 }
 .form__button--confirm {
   position: absolute;
   width: 90px;
   height: 30px;
   border: none;
-  top: 410px;
-  left: 380px;
+  top: 450px;
+  left: 640px;
   border-radius: 5px;
   background-color: hsl(243, 100%, 62%);
   color: white;
   position: absolute;
+  cursor: pointer;
+}
+.hidden {
+  display: none;
+}
+.active {
+  background-color: hsl(217, 100%, 97%);
+  border: 1px solid blue !important;
+}
+.active--3 {
+  background-color: white;
+  color: black;
 }

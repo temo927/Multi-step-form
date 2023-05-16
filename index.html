@@ -28,24 +28,24 @@
               class="nav__image"
               id="image"
             />
-            <ul class="nav__steps">
-              <li class="nav__form">
-                <span>1</span>
+            <ul class="nav__steps dots">
+              <li class="nav__form ">
+                <button class="dots__dot active--1" data-slide="0">1</button>
                 <p>Step 1</p>
                 <h1>your info</h1>
               </li>
               <li class="nav__plan">
-                <span>2</span>
+                <button class="dots__dot" data-slide="1">2</button>
                 <p>Step 2</p>
                 <h1>select plan</h1>
               </li>
               <li class="nav__adds">
-                <span>3</span>
+                <button class="dots__dot" data-slide="2">3</button>
                 <p>Step 3</p>
                 <h1>adds-on</h1>
               </li>
               <li class="nav__summary">
-                <span>4</span>
+                <button class="dots__dot" data-slide="3">4</button>
                 <p>Step 4</p>
                 <h1>Summary</h1>
               </li>
@@ -59,10 +59,10 @@
               <p>Please provide your name, email address, and phone number.</p>
               <form class="input__form">
                 <label for="name">Name</label
-                ><span class="hidden">This field is required</span>
+                ><span class="hidden required">This field is required</span>
                 <input type="text" placeholder=" e.g. Stephen King" id="name" />
                 <label for="email">Email Adress</label
-                ><span class="hidden">This field is required</span>
+                ><span class="hidden required">This field is required</span>
                 <input
                   type="email"
                   placeholder=" e.g. stephenking@lorem.com"
@@ -70,9 +70,9 @@
                   id="email"
                 />
                 <label for="number">Phone number</label
-                ><span class="hidden">This field is required</span>
+                ><span class="hidden required">This field is required</span>
                 <input
-                  type="tel"
+                  type="number"
                   placeholder=" e.g. +1 234 567 890"
                   id="number"
                 />
@@ -87,23 +87,24 @@
                 <div class="arcade plan active">
                   <img src="/images/icon-arcade.svg" alt="arcade" />
                   <h2>Arcade</h2>
-                  <p>$90/yr</p>
+                  <p class="price">$90/yr</p>
                   <p class="offer">2 months free</p>
                 </div>
                 <div class="advance plan">
                   <img src="/images/icon-advanced.svg" alt="arcade" />
                   <h2>Advanced</h2>
-                  <p>$129/yr</p>
+                  <p class="price">$129/yr</p>
                   <p class="offer">2 months free</p>
                 </div>
                 <div class="pro plan">
                   <img src="/images/icon-pro.svg" alt="pro" />
                   <h2>Pro</h2>
-                  <p>$150/yr</p>
+                  <p class="price">$150/yr</p>
                   <p class="offer">2 months free</p>
                 </div>
               </div>
               <article class="pay__options">
+                <p class="warning hidden">please select plan</p>
                 <label for="rad1">Monthly</label>
                 <input type="radio" name="payment" id="rad1" value="monthly" />
                 <input
@@ -112,22 +113,80 @@
                   id="rad2"
                   value="yearly"
                   checked
+                  
                 />
-                <label for="rad2">Yearly</label>
+                <label for="rad2"`>Yearly</label>
               </article>
             </div>
           </div>
-          <div />
-          <button type="button" class="form__button--back hidden">
-            Go Back
-          </button>
-          <button type="button" class="form__button--next">Next Step</button>
-          <button type="button" class="form__button--confirm hidden">
-            Confirm
-          </button>
-          <div />
+          <div class="adds__info slide slide--3">
+            <h1>Pick add-ons</h1>
+            <p class="text-1">Add-ons help enhance your gaming experience.</p>
+            <div class="adds">
+              <div class="check__form check-1">
+                <input type="checkbox" id="online__service" />
+                <label for="online__service">
+                  <h2>Online Service</h2>
+                  <p>Access to multiplayer games</p>
+                </label>
+                <span class="option">+$10/yr</span>
+              </div>
+
+              <div class="check__form check-2">
+                <input type="checkbox" id="larger__storage" />
+                <label for="larger__storage">
+                  <h2>Larger storage</h2>
+                  <p>extra 1TB of cloud save</p>
+                </label>
+                <span class="option">+$20/yr</span>
+              </div>
+
+              <div class="check__form check-3">
+                <input type="checkbox" id="costum__profile" />
+                <label for="costum__profile">
+                  <h2>Costumizable profile</h2>
+                  <p>costum theme on your profile</p>
+                </label>
+                <span class="option">+$20/yr</span>
+              </div>
+            </div>
+          </div>
+          <div class="finish slide slide--4">
+            <div class="finish__box">
+              <h1>Finishing up</h1>
+              <p class="text--2">
+                Double-check everything looks OK before confirming
+              </p>
+              <div class="summary">
+                 <!-- <div class="box"> 
+                   <div class="summary__plan"> 
+                  <label>Arcade (yearly)</label>
+                    <a>Change</a>
+                  </div>
+                  <p>Online service</p>
+                  <p>Larger storage</p>
+                </div>
+                <div class="summary__price">
+                  <p>$90/yr</p>
+                  <p>+10/yr</p>
+                  <p>+20/yr</p>
+                </div>  -->
+                 </div> 
+              </div>
+            </div>
+            <div class="slide slide--5">
+                  <img src="/images/icon-thank-you.svg" alt="finish">
+                  <h1>Thank you!</h1>
+                  <p>Thanks for confirming your subscription! We hope you have fun using our platform. If you ever need support, please feel free to email us at</p>
+                  <span>support@loremgaming.com</span>
+            </div>
+            <div />
+            <div />
+          </div>
         </div>
       </div>
+      <button type="button" class="form__button--back hidden">Go Back</button>
+      <button type="button" class="form__button--next">Next Step</button>
     </section>
   </body>
 </html>
