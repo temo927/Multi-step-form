@@ -86,6 +86,7 @@ class App {
       next.classList.remove(`form__button--confirm`);
       next.textContent = `Next Step`;
     }
+
     this.#goToSlide(this.#currentSlide);
   }
 
@@ -104,7 +105,6 @@ class App {
       p.textContent = arrPrice[i];
     });
     payOption = `Monthly`;
-    console.log(this.payOption);
   }
 
   #planYear() {
@@ -123,22 +123,17 @@ class App {
       p.textContent = arrPrice[i];
     });
     payOption = `Yearly`;
-    console.log(this.payOption);
   }
 
   #selectPlan(e) {
-    if (e.target.classList.contains(`plan`)) {
-      const clicked = e.target;
-      const siblings = clicked
-        .closest(`.bill__plans`)
-        .querySelectorAll(`.plan`);
+    const clicked = e.target.closest(`.plan`);
+    const siblings = clicked.closest(`.bill__plans`).querySelectorAll(`.plan`);
 
-      clicked.classList.add(`active`);
+    clicked.classList.add(`active`);
 
-      siblings.forEach((el) => {
-        if (el !== clicked) el.classList.remove(`active`);
-      });
-    }
+    siblings.forEach((el) => {
+      if (el !== clicked) el.classList.remove(`active`);
+    });
   }
 
   #infoCheck(num) {
@@ -210,9 +205,12 @@ class App {
     if (typeof emp[0] === `number`) {
       sumPrice = emp.reduce((acu, p) => acu + p);
     }
-    
+
     payOption === `Monthly` ? (payOpt = `month`) : (payOpt = `year`);
     payOption === `Monthly` ? (payO = `mo`) : (payO = `yr`);
+
+    const [firstPrice = ``, secondPrice = ` `, thirdPrice = ``] = this.priceArr;
+    const [firstName = ``, secondName = ``, thirdName = ``] = this.nameArr;
 
     const html = `
                   <div class="box"> 
@@ -221,15 +219,15 @@ class App {
                     <a>Change</a>
                   </div>
 
-                  <p>${this.nameArr[0]}</p>
-                  <p>${this.nameArr[1]}</p>
-                  <p>${this.nameArr[2]}</P>
+                  <p>${firstName}</p>
+                  <p>${secondName}</p>
+                  <p>${thirdName}</P>
                 </div>
                 <div class="summary__price">
                    <p>${priceActive}</p>
-                  <p>${this.priceArr[0]}</p>
-                  <p>${this.priceArr[1]}</p>
-                  <p>${this.priceArr[2]}</p>
+                   <p>${firstPrice}</p>
+                  <p>${secondPrice}</p>
+                 <p>${thirdPrice}</p>
                 </div> 
                 <div class ="total">
                   <p>Total(${`${payOpt}`})</p>
@@ -246,8 +244,7 @@ class App {
       numberInput.value,
       sumPrice
     );
-    console.log(user);
   }
 }
 
-const app = new App([``, ``, ``], [``, ``, ``]);
+const app = new App([], []);
